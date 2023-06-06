@@ -450,7 +450,7 @@
 }
 
 .brand .n-logo {
-    max-width: 100px;
+    max-width: 300px;
     margin-bottom: 40px;
 }
 
@@ -460,8 +460,8 @@
     position: relative;
 }
 
-.creative-tim-logo {
-    max-width: 140px;
+.ict-moph-logo {
+    max-width: 40px;
     top: -2px;
     position: relative;
 }

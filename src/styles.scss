@@ -1,2 +1,70 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/scss/bootstrap.scss";
+// regular style toast
+@import 'ngx-toastr/toastr';
+
+// @import "~@ng-select/ng-select/themes/default.theme.css";
+@import "~@ng-select/ng-select/themes/material.theme.css";
+
+.ng-select.select2 .ng-select-container {
+    color: rgba(255, 255, 255, 1) !important;
+    // min-height: 0px;
+    // border-radius: 0;
+}
+
+
+.ng-select.select2 {
+    color: white !important;
+    // border: 0px;
+    // min-height: 0px;
+    // border-radius: 0;
+}
+
+.ng-select.select2 .ng-select-container {
+    color: rgba(255, 255, 255, 1) !important;
+    // min-height: 0px;
+    // border-radius: 0;
+}
+
+.ng-select.select2 .ng-select-container .ng-value-container .ng-input>input {
+    box-sizing: content-box;
+    background: none transparent;
+    border: 1px solid white;
+    box-shadow: none;
+    outline: none;
+    padding: 0;
+    cursor: default;
+    width: 100%;
+    border-radius: 30px;
+    height: 2rem;
+}
+
+.ng-select.select2 .ng-select-container .ng-value-container {
+    padding: 0.4375em 1rem;
+}
+
+.ng-select.select2 {
+    padding-bottom: 0rem
+}
+
+.ngb-tp-input {
+    color: white !important;
+} 
+.ngb-tp-input:focus {
+    color: black !important;
+} 
+
+
+// // bootstrap style toast
+// // or import a bootstrap 4 alert styled design (SASS ONLY)
+// // should be after your bootstrap imports, it uses bs4 variables, mixins, functions
+// @import 'ngx-toastr/toastr-bs4-alert';
+
+// // if you'd like to use it without importing all of bootstrap it requires
+// @import 'bootstrap/scss/functions';
+// @import 'bootstrap/scss/variables';
+// @import 'bootstrap/scss/mixins';
+// // bootstrap 4
+// @import 'ngx-toastr/toastr-bs4-alert';
+// // boostrap 5
+// @import 'ngx-toastr/toastr-bs5-alert';

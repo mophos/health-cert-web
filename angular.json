@@ -9,6 +9,7 @@
       "projectType": "application",
       "architect": {
         "build": {
+          "defaultConfiguration": "development",
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist",
@@ -24,7 +25,9 @@
             "styles": [
               "src/styles.scss",
               "src/assets/sass/now-ui-kit.scss",
-              "src/assets/css/demo.css"
+              "src/assets/css/demo.css",
+              "src/assets/icon/css/icons.css",
+              "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": [
               "node_modules/rellax/rellax.min.js"
@@ -47,6 +50,16 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ]
+            },
+            "development": {
+              "optimization": false,
+              "outputHashing": "all",
+              "sourceMap": true,
+              "namedChunks": true,
+              "extractLicenses": false,
+              "vendorChunk": true,
+              "buildOptimizer": false,
+              "budgets": []
             }
           }
         },
@@ -80,6 +93,7 @@
             "styles": [
               "src/styles.scss",
               "src/assets/sass/now-ui-kit.scss",
+              "src/assets/icon/css/icons.css",
               "src/assets/css/demo.css"
             ],
             "assets": [
@@ -128,7 +142,7 @@
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "app",
-      "styleext": "scss"
+      "style": "scss"
     },
     "@schematics/angular:directive": {
       "prefix": "app"

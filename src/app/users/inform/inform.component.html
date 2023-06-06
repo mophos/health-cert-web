@@ -1,0 +1,191 @@
+<!-- <app-navbar></app-navbar> -->
+<div class="body-inform">
+    <!-- <div class="page-header clear-filter" filter-color="orange"> -->
+    <!-- <div class="page-header-image rellax-header" data-rellax-speed="-7"
+            style="background-image: url('assets/img/bg-head.jpg');background-size: cover;">
+        </div> -->
+    <div class="container" style="padding: 5rem;">
+        <div class="content-center brand">
+
+            <div>
+                <h4> แจ้งเหตุภัยคุกคาม</h4>
+                <!-- <p class="category">Form Controls</p> -->
+                <div class="card" style="background-color: #7e83e57a;border-radius: 1rem;">
+                    <!-- <div class="card-header" >
+                        ข้อมูลทั่วไป
+                    </div> -->
+                    <div class="card-body">
+                        <h5 class="card-title">ข้อมูลทั่วไป</h5>
+                        <p class="card-text">
+                            <div class="row">
+                                <div class="col-6">
+                                    <!-- <p class="category">ผู้แจ้ง</p> -->
+                                    <div class="form-check form-check-radio">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="radio" name="peopleType"
+                                                [(ngModel)]="peopleType" value="1">
+                                            <span class="form-check-sign"></span>
+                                            บุคคลทั่วไป
+                                        </label>
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="radio" name="peopleType"
+                                                [(ngModel)]="peopleType" value="2">
+                                            <span class="form-check-sign"></span>
+                                            หน่วยงานภายใต้สธ.
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <input type="text" name="name" [(ngModel)]="name" placeholder="ชื่อ/หน่วยงาน" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <input type="text" name="event" [(ngModel)]="event" placeholder="เหตุการณ์" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <input type="text" name="detail" [(ngModel)]="detail" placeholder="รายละเอียด" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    วันที่พบเหตุ
+                                    <div class="input-group">
+                                        <input class="form-control" style="color:white" name="mydate"
+                                            placeholder="Select a date" angular-mydatepicker #dp="angular-mydatepicker"
+                                            [(ngModel)]="date" [options]="myDpOptions"
+                                            (dateChanged)="onDateChanged($event)" (click)="dp.toggleCalendar()"
+                                            [locale]="'th'" />
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    เวลาที่พบเหตุ
+                                    <div class="input-group">
+                                        <ngb-timepicker class="inform-time" [(ngModel)]="time" [spinners]="false">
+                                        </ngb-timepicker>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    รูปภาพ
+                                    <div class="containerDND" appDnd (fileDropped)="onFileDropped($event)">
+                                        <input type="file" #fileDropRef id="fileDropRef" multiple
+                                            (change)="fileBrowseHandler($event.target.files)" />
+                                        <!-- <img src="assets/img/ic-upload-file.svg" alt=""> -->
+                                        <h3>Drag and drop file here</h3>
+                                        <h3>or</h3>
+                                        <label for="fileDropRef">Browse for file</label>
+                                    </div>
+                                    <div class="files-list">
+                                        <div class="single-file" *ngFor="let file of files; let i = index">
+                                            <img src="assets/img/ic-file.svg" width="45px" alt="file">
+                                            <div class="info">
+                                                <h4 class="name">
+                                                    {{ file?.name }}
+                                                </h4>
+                                                <p class="size">
+                                                    {{ formatBytes(file?.size) }}
+                                                </p>
+                                                <app-progress [progress]="file?.progress"></app-progress>
+                                            </div>
+                                            <img src="assets/img/ic-delete-file.svg" class="delete" width="20px"
+                                                alt="file" (click)="deleteFile(i)">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div class="col-5">
+                                    <hr style=" border: 2px dashed white;">
+                                </div>
+                                <div class="col-2">
+                                    บันทึก หรือ กรอกข้อมูลเพิ่มเติม
+                                </div>
+                                <div class="col-5">
+                                    <hr style=" border: 2px dashed white;">
+                                </div> -->
+                            </div>
+                    </div>
+                </div>
+
+                <div class="card" style="background-color: #7e83e57a;border-radius: 1rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">ข้อมูลเพิ่มเติม (ถ้าทราบ)</h5>
+                        <div class="card-text">
+                            <div class="row" style="text-align: left;">
+                                <div class="col-sm-12 col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" name="cause" [(ngModel)]="cause" placeholder="สาเหตุ" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" name="effect" [(ngModel)]="effect" placeholder="ผลกระทบ" class="form-control" />
+                                    </div>
+                                </div>
+                                <!-- <div class="col-sm-12 col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" value="" placeholder="อื่น ๆ" class="form-control" />
+                                    </div>
+                                </div> -->
+                                <div class="col-sm-4 col-md-2" style="align-self: center;">
+                                    ประเภทเหตุการณ์
+                                </div>
+                                <div class="col-sm-8 col-md-4">
+                                    <ng-select [(ngModel)]="typeId" class="select2">
+                                        <ng-option *ngFor="let l of type" [value]="l.id">
+                                            {{l.name}}
+                                        </ng-option>
+                                    </ng-select>
+                                </div>
+            
+                                <div class="col-sm-4 col-md-4" style="align-self: center;">
+                                    เป็นเหตุ Critical(ร้ายแรง)
+                                </div>
+                                <div class="col-sm-8 col-md-2" style="align-self: center;">
+                                    <bSwitch [(ngModel)]="isCritical">
+                                    </bSwitch>
+                                </div>
+                                <div class="col-sm-4 col-md-2" style="align-self: center;">
+                                    หมวดหมู่
+                                </div>
+                                <div class="col-sm-8 col-md-4">
+                                    <ng-select [(ngModel)]="catalogId" class="select2">
+                                        <ng-option *ngFor="let l of catalog" [value]="l.id">
+                                            {{l.name}}
+                                        </ng-option>
+                                    </ng-select>
+            
+                                </div>
+            
+                                <div class="col-sm-4 col-md-4" style="align-self: center;">
+                                    ต้องการความช่วยเหลือ
+                                </div>
+                                <div class="col-sm-8 col-md-2" style="align-self: center;">
+                                    <bSwitch [(ngModel)]="isHelp">
+                                    </bSwitch>
+                                </div>
+                                <div class="col-sm-4 col-md-2" style="align-self: center;">
+                                    ระดับความรุนแรง
+                                </div>
+                                <div class="col-sm-8 col-md-4">
+                                    <ng-select [(ngModel)]="levelId" class="select2">
+                                        <ng-option *ngFor="let l of level" [value]="l.id">
+                                            {{l.name}}
+                                        </ng-option>
+                                    </ng-select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12"  style="text-align: center;">
+                        <button class="btn btn-primary">บันทึก</button>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+
+</div>
